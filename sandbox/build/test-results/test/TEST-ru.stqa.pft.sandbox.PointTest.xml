@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.sandbox.PointTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-08-27T15:15:25" hostname="msk00912-note" time="0.009">
+<testsuite name="ru.stqa.pft.sandbox.PointTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-08-29T15:11:05" hostname="msk00912-note" time="0.001">
   <properties/>
-  <testcase name="testDistance" classname="ru.stqa.pft.sandbox.PointTest" time="0.009">
+  <testcase name="testDistance" classname="ru.stqa.pft.sandbox.PointTest" time="0.001">
     <failure message="java.lang.AssertionError: expected [30.983866769659336] but found [31.016124838541646]" type="java.lang.AssertionError">java.lang.AssertionError: expected [30.983866769659336] but found [31.016124838541646]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:513)
