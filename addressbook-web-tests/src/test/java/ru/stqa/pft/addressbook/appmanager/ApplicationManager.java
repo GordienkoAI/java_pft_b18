@@ -3,7 +3,7 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
-import ru.stqa.pft.addressbook.model.ContactData;
+
 
 import java.util.concurrent.TimeUnit;
 

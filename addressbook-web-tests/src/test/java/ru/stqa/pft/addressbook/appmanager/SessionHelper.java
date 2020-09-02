@@ -10,6 +10,7 @@ public class SessionHelper extends HelperBase {
     }
 
     public void login(String login, String password) {
+        wd.get("http://localhost:8090/addressbook/group.php");
         type(By.name("user"), login);
         type(By.name("pass"),password);
         click(By.xpath("//input[@value='Login']"));
