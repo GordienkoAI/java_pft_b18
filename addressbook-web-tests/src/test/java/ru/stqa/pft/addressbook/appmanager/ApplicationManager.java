@@ -10,9 +10,10 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
     ChromeDriver wd;
 
-    private  NavigationHelper navigationHelper;
+    private NavigationHelper navigationHelper;
     private GroupHelper groupHelper;
     private SessionHelper sessionHelper;
+    private ContactHelper contactHelper;
 
 
     public void init() {
@@ -22,6 +23,7 @@ public class ApplicationManager {
         groupHelper= new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
         sessionHelper = new SessionHelper(wd);
+        contactHelper = new ContactHelper(wd);
         sessionHelper.login("admin", "secret");
     }
 
@@ -45,34 +47,15 @@ public class ApplicationManager {
     }
 
 
-    public void returnToContactPage(String s) {
-        wd.findElement(By.linkText(s)).click();
-    }
-
-    public void submitCreateContact(String submit) {
-        wd.findElement(By.name(submit)).click();
-    }
-
-    public void fillContactForm(ContactData contactData) {
-        wd.findElement(By.name("firstname")).click();
-        wd.findElement(By.name("firstname")).clear();
-        wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstName());
-        wd.findElement(By.name("middlename")).clear();
-        wd.findElement(By.name("middlename")).sendKeys(contactData.getMiddleName());
-        wd.findElement(By.name("email")).click();
-        wd.findElement(By.name("email")).clear();
-        wd.findElement(By.name("email")).sendKeys(contactData.getEmail());
-    }
-
-    public void initContactCreation(String s) {
-        wd.findElement(By.linkText(s)).click();
-    }
-
     public GroupHelper getGroupHelper() {
         return groupHelper;
     }
 
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
+    }
+
+    public ContactHelper getContactHelper() {
+        return contactHelper;
     }
 }
