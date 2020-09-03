@@ -17,7 +17,6 @@ public class ApplicationManager {
 
 
     public void init() {
-
         wd = new ChromeDriver();
         wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         groupHelper= new GroupHelper(wd);
@@ -25,6 +24,7 @@ public class ApplicationManager {
         sessionHelper = new SessionHelper(wd);
         contactHelper = new ContactHelper(wd);
         sessionHelper.login("admin", "secret");
+
     }
 
 
@@ -57,5 +57,9 @@ public class ApplicationManager {
 
     public ContactHelper getContactHelper() {
         return contactHelper;
+    }
+
+    public void confirmDeleteContact() {
+        wd.switchTo().alert().accept();
     }
 }

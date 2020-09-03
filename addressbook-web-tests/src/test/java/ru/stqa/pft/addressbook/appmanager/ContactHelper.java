@@ -29,4 +29,16 @@ public class ContactHelper  extends HelperBase {
     public void initContactCreation(String s) {
         click(By.linkText(s));
     }
+
+    public void editContact() {
+        click(By.xpath("//img[@alt='Edit']"));
+    }
+
+    public void updateContact() {
+        click(By.name("update"));
+    }
+
+    public void deleteContact() {
+        click(By.xpath("//input[@value='Delete']"));
+    }
 }
