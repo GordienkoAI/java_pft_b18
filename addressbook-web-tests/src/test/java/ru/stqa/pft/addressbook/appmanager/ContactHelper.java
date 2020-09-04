@@ -18,16 +18,16 @@ public class ContactHelper  extends HelperBase {
     }
 
 
-    public void returnToContactPage(String s) {
-        click(By.linkText(s));
+    public void returnToContactPage() {
+        click(By.linkText("home page"));
     }
 
-    public void submitCreateContact(String submit) {
-        click(By.name(submit));
+    public void submitCreateContact() {
+        click(By.name("submit"));
     }
 
-    public void initContactCreation(String s) {
-        click(By.linkText(s));
+    public void initContactCreation() {
+        click(By.linkText("add new"));
     }
 
     public void editContact() {
