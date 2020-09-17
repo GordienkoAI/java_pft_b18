@@ -78,5 +78,8 @@ public class ApplicationManager {
 
     public void confirmDeleteContact() {
         wd.switchTo().alert().accept();
+        wd.findElement(By.linkText("home")).click();
     }
+
+
 }

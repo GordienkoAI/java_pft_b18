@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.model.GroupData;
+
 
 public class ContactHelper  extends HelperBase {
 
@@ -40,8 +40,8 @@ public class ContactHelper  extends HelperBase {
         click(By.linkText("add new"));
     }
 
-    public void editContact() {
-        click(By.xpath("//img[@alt='Edit']"));
+    public void editContact(int index) {
+        wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
     }
 
     public void updateContact() {
@@ -60,6 +60,14 @@ public class ContactHelper  extends HelperBase {
     }
 
     public boolean isContactAPresent() {
-        return isElementPresent(By.xpath(("//table[@id='maintable']/tbody/tr[2]/td/input")));
+        return isElementPresent(By.xpath(("//table[@id='maintable']/tbody/tr/td/input[@type='checkbox']")));
+    }
+
+    public int getContactCount() {
+        return wd.findElements(By.name("selected[]")).size();
+    }
+
+    public void selectContact(int index) {
+        wd.findElements(By.name("selected[]")).get(index).click();
     }
 }
