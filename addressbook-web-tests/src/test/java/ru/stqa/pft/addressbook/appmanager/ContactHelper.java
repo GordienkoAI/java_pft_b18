@@ -3,9 +3,13 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ContactHelper  extends HelperBase {
@@ -69,5 +73,11 @@ public class ContactHelper  extends HelperBase {
 
     public void selectContact(int index) {
         wd.findElements(By.name("selected[]")).get(index).click();
+    }
+
+    public List<ContactData> getContactList() {
+        List<ContactData> contactList = new ArrayList<ContactData>();
+        List<WebElement> contacts = wd.findElements(By.cssSelector("span.group"));
+        return contactList;
     }
 }
