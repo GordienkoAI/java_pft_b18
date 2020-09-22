@@ -21,7 +21,7 @@ public class ContactHelper  extends HelperBase {
 
     public void fillContactForm(ContactData contactData, boolean creation) {
         type(By.name("firstname"),contactData.getFirstName());
-        type(By.name("middlename"),contactData.getMiddleName() );
+        type(By.name("lastname"),contactData.getLastName() );
         type(By.name("email"),contactData.getEmail() );
 
         if (creation){
@@ -83,9 +83,11 @@ public class ContactHelper  extends HelperBase {
         for(int i=1; i <= elements.size(); i++  ){
             String lastName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']["+i+"]/td[2]")).getText();
             String name = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']["+i+"]/td[3]")).getText();
-            ContactData c = new ContactData(null, lastName, name, null);
+            int id = Integer.parseInt(wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']["+i+"]/td/input")).getAttribute("value"));
+            ContactData c = new ContactData(id,name, lastName, null, null);
             contacts.add(c);
         }
         return contacts;
     }
+
 }
