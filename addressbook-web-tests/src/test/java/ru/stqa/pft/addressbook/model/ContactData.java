@@ -7,7 +7,15 @@ public class ContactData {
     private  String firstName;
     private  String lastName;
     private  String email;
+    private  String email1;
+    private  String email2;
+    private  String allEmails;
     private  String group;
+    private  String homePhone;
+    private  String mobilePhone;
+    private  String workPhone;
+    private  String allPhones;
+    private  String address;
 
     @Override
     public boolean equals(Object o) {
@@ -49,6 +57,53 @@ public class ContactData {
         return this;
     }
 
+    public ContactData withMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+        return this;
+    }
+
+    public ContactData withHomePhone(String homePhone) {
+        this.homePhone = homePhone;
+        return this;
+    }
+
+    public ContactData withWorkPhone(String workPhone) {
+        this.workPhone = workPhone;
+        return this;
+    }
+
+    public ContactData withEmails(String allEmails){
+        this.allEmails = allEmails;
+        return this;
+    }
+
+    public ContactData withAllPhones(String allPhones) {
+        this.allPhones = allPhones;
+        return this;
+    }
+
+    public ContactData withEmail1(String email1) {
+        this.email1 = email1;
+        return this;
+    }
+
+    public ContactData withEmail2(String email2) {
+        this.email2 = email2;
+        return this;
+    }
+
+    public ContactData withAddress(String address) {
+        this.address = address;
+        return this;
+    }
+
+    public String getEmail1() {
+        return this.email1;
+    }
+
+    public String getEmail2() {
+        return this.email2;
+    }
 
     public String getFirstName() {
         return this.firstName;
@@ -66,8 +121,30 @@ public class ContactData {
         return this.group;
     }
 
+    public String getHomePhone() {
+        return this.homePhone;
+    }
+
+    public String getMobilePhone() {
+        return this.mobilePhone;
+    }
+
+    public String getWorkPhone() {
+        return this.workPhone;
+    }
+
     public int getId() {
         return  this.id;
     }
+
+    public String getAllPhones() {
+        return allPhones;
+    }
+
+    public String getAllEmails(){
+        return allEmails;
+    }
+
+    public String getAddress() {return address; }
 
 }
