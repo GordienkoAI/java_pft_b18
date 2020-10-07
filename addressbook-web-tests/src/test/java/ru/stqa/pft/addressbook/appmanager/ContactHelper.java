@@ -9,7 +9,9 @@ import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 public class ContactHelper  extends HelperBase {
@@ -22,10 +24,10 @@ public class ContactHelper  extends HelperBase {
     public void fillContactForm(ContactData contactData, boolean creation) {
         type(By.name("firstname"),contactData.getFirstName());
         type(By.name("lastname"),contactData.getLastName() );
-        type(By.name("email"),contactData.getEmail() );
+        type(By.name("email"),contactData.getEmail());
 
         if (creation){
-            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(ContactData.getGroup());
+            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
@@ -40,7 +42,7 @@ public class ContactHelper  extends HelperBase {
         click(By.name("submit"));
     }
 
-    public void initContactCreation() {
+    public void init() {
         click(By.linkText("add new"));
     }
 
@@ -48,43 +50,70 @@ public class ContactHelper  extends HelperBase {
         wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
     }
 
+    public void editContactById(int index) {
+        wd.findElement(By.cssSelector("a[href='edit.php?id="+ index +"']")).click();
+    }
+
+
     public void updateContact() {
         click(By.name("update"));
     }
 
-    public void deleteContact() {
+    public void delete() {
         click(By.xpath("//input[@value='Delete']"));
     }
 
-    public void createContact(ContactData contactData,boolean creation) {
-        initContactCreation();
+    public void create(ContactData contactData, boolean creation) {
+        init();
         fillContactForm(contactData, creation);
         submitCreateContact();
         returnToContactPage();
     }
 
-    public boolean isContactAPresent() {
-        return isElementPresent(By.xpath(("//table[@id='maintable']/tbody/tr/td/input[@type='checkbox']")));
+    public void modify(ContactData cont) {
+        editContactById(cont.getId());
+        fillContactForm(cont, false);
+        updateContact();
+        returnToContactPage();
     }
 
-    public int getContactCount() {
-        return wd.findElements(By.name("selected[]")).size();
+    public void delete(ContactData contact) {
+        selectById(contact.getId());
+        delete();
     }
 
-    public void selectContact(int index) {
+
+    public void select(int index) {
         wd.findElements(By.name("selected[]")).get(index).click();
     }
 
+    public void selectById(int index) {
+        wd.findElement(By.cssSelector("input[value='"+index+"']")).click();
+    }
 
 
-    public List<ContactData> getContactList() {
+    public List<ContactData> list() {
         List<ContactData> contacts = new ArrayList<ContactData>();
         List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']"));
         for(int i=1; i <= elements.size(); i++  ){
             String lastName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']["+i+"]/td[2]")).getText();
             String name = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']["+i+"]/td[3]")).getText();
             int id = Integer.parseInt(wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']["+i+"]/td/input")).getAttribute("value"));
-            ContactData c = new ContactData(id,name, lastName, null, null);
+            ContactData c = new ContactData().withId(id).withFirstName(name).withLastName(lastName);
+            contacts.add(c);
+        }
+        return contacts;
+    }
+
+
+    public Set<ContactData> all() {
+        Set<ContactData> contacts = new HashSet<>();
+        List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']"));
+        for(int i=1; i <= elements.size(); i++  ){
+            String lastName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']["+i+"]/td[2]")).getText();
+            String name = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']["+i+"]/td[3]")).getText();
+            int id = Integer.parseInt(wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']["+i+"]/td/input")).getAttribute("value"));
+            ContactData c = new ContactData().withId(id).withFirstName(name).withLastName(lastName);
             contacts.add(c);
         }
         return contacts;

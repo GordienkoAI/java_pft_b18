@@ -3,62 +3,67 @@ package ru.stqa.pft.addressbook.model;
 import java.util.Objects;
 
 public class ContactData {
-    private int id;
-    private final String firstName;
-    private final String lastName;
-    private final String email;
+    private int id  = Integer.MAX_VALUE;
+    private  String firstName;
+    private  String lastName;
+    private  String email;
+    private  String group;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContactData that = (ContactData) o;
-        return Objects.equals(firstName, that.firstName) &&
+        return id == that.id &&
+                Objects.equals(firstName, that.firstName) &&
                 Objects.equals(lastName, that.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName);
+        return Objects.hash(id, firstName, lastName);
     }
 
-    private static String group;
-
-    public ContactData(int id, String firstName, String lastName, String email, String group) {
+    public ContactData withId(int id) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.group = group;
+        return this;
     }
 
-
-    public ContactData(String firstName, String lastName, String email, String group) {
-        this.id = Integer.MAX_VALUE;
+    public ContactData withFirstName(String firstName) {
         this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.group = group;
+        return this;
     }
+
+    public ContactData withLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public ContactData withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public ContactData withGroup(String group) {
+        this.group = group;
+        return this;
+    }
+
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public String getLastName() {
-        return lastName;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        return this.lastName;
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
-    public static String getGroup() {
-        return group;
+    public String getGroup() {
+        return this.group;
     }
 
     public int getId() {
