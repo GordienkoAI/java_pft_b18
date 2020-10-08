@@ -17,7 +17,7 @@ public class ContactCreationTest extends TestBase {
   public void testCreateNewContact() throws Exception {
       Contacts before = app.contact().all();
       app.contact().init();
-      File photo = new File("src/test/resources/admin.jpeg");
+      File photo = new File("src/test/resources/imagJava.jpeg");
       ContactData cont  = new ContactData()
       .withFirstName("Name1").withLastName("lastName32").withEmail("mail32@mail.ru").withGroup("1test").withPhoto(photo);
       app.contact().create(cont, true);
@@ -32,7 +32,7 @@ public class ContactCreationTest extends TestBase {
     public void testCurrentDir(){
         File currentDir = new File(".");
       System.out.println(currentDir.getAbsolutePath());
-      File photo = new File("src/test/resources/admin.jpeg");
+      File photo = new File("src/test/resources/imagJava.jpeg");
       System.out.println(photo.getAbsolutePath());
       System.out.println(photo.exists());
 
