@@ -1,0 +1,52 @@
+<list>
+  <ContactData>
+    <firstName>FirstN 0</firstName>
+    <lastName>LastN 0</lastName>
+    <group>1test</group>
+  </ContactData>
+  <ContactData>
+    <firstName>FirstN 1</firstName>
+    <lastName>LastN 1</lastName>
+    <group>1test</group>
+  </ContactData>
+  <ContactData>
+    <firstName>FirstN 2</firstName>
+    <lastName>LastN 2</lastName>
+    <group>1test</group>
+  </ContactData>
+  <ContactData>
+    <firstName>FirstN 3</firstName>
+    <lastName>LastN 3</lastName>
+    <group>1test</group>
+  </ContactData>
+  <ContactData>
+    <firstName>FirstN 4</firstName>
+    <lastName>LastN 4</lastName>
+    <group>1test</group>
+  </ContactData>
+  <ContactData>
+    <firstName>FirstN 5</firstName>
+    <lastName>LastN 5</lastName>
+    <group>1test</group>
+  </ContactData>
+  <ContactData>
+    <firstName>FirstN 6</firstName>
+    <lastName>LastN 6</lastName>
+    <group>1test</group>
+  </ContactData>
+  <ContactData>
+    <firstName>FirstN 7</firstName>
+    <lastName>LastN 7</lastName>
+    <group>1test</group>
+  </ContactData>
+  <ContactData>
+    <firstName>FirstN 8</firstName>
+    <lastName>LastN 8</lastName>
+    <group>1test</group>
+  </ContactData>
+  <ContactData>
+    <firstName>FirstN 9</firstName>
+    <lastName>LastN 9</lastName>
+    <group>1test</group>
+  </ContactData>
+</list>
