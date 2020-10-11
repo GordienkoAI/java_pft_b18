@@ -9,6 +9,9 @@ dependencies{
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'ch.qos.logback:logback-classic:1.1.5'
     implementation 'mysql:mysql-connector-java:8.0.21'
+    implementation 'org.hibernate:hibernate-core:5.4.21.Final'
+
+}
 
     test {
         useTestNG()
@@ -41,6 +44,4 @@ dependencies{
     repositories {
         mavenCentral()
     }
-
-}
 
