@@ -4,11 +4,5 @@
     "lastName": "LastN 0",
     "group": "1test",
     "address": "London"
-  },
-  {
-    "firstName": "FirstN 1",
-    "lastName": "LastN 1",
-    "group": "1test",
-    "address": "Moscow"
   }
 ]

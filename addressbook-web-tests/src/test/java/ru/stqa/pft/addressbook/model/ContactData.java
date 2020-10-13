@@ -15,6 +15,7 @@ import java.util.Set;
 @Table(name = "addressbook")
 @XStreamAlias("ContactData")
 public class ContactData {
+
     @XStreamOmitField
     @Id
     private int id  = Integer.MAX_VALUE;
@@ -52,7 +53,8 @@ public class ContactData {
 
     @Transient
     private  String allPhones;
-    @Transient
+
+
     @Column(name = "address")
     @Type(type = "text")
     private  String address;

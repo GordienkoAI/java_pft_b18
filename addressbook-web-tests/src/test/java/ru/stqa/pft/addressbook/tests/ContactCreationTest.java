@@ -62,10 +62,15 @@ public class ContactCreationTest extends TestBase {
       app.contact().create(cont, true);
       Contacts after = app.db().contacts();
       assertEquals(after.size(), before.size() + 1);
+       verifyContactListInUI();
 
-      assertThat(after, equalTo(before.withAdded(
-              cont.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
+      /*  assertThat(after, equalTo(before.withAdded(
+       cont.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt())))); */
   }
+
+
+
+
 
   @Test(enabled =  false)
     public void testCurrentDir(){
@@ -74,6 +79,5 @@ public class ContactCreationTest extends TestBase {
       File photo = new File("src/test/resources/imagJava.jpeg");
       System.out.println(photo.getAbsolutePath());
       System.out.println(photo.exists());
-
   }
 }
