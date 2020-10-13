@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.HbConnectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-12T17:54:02" hostname="msk00912-note" time="0.267">
+  <properties/>
+  <testcase name="testHbConnection" classname="ru.stqa.pft.addressbook.tests.HbConnectionTest" time="0.267"/>
+  <system-out><![CDATA[Hibernate: select contactdat0_.id as id1_0_, contactdat0_.email as email2_0_, contactdat0_.firstname as firstnam3_0_, contactdat0_.home as home4_0_, contactdat0_.lastname as lastname5_0_, contactdat0_.mobile as mobile6_0_, contactdat0_.work as work7_0_ from addressbook contactdat0_
+ContactData{id=78, firstName='FirstN 0', lastName='LastN 0', email='sasdfad@mail.com', address='null'}
+ContactData{id=80, firstName='FirstN 0', lastName='LastN 0', email='', address='null'}
+ContactData{id=81, firstName='MiddleName', lastName='First', email='email@mail.com', address='null'}
+ContactData{id=82, firstName='MiddleName', lastName='First', email='email@mail.com', address='null'}
+ContactData{id=83, firstName='FirstN 1', lastName='LastN 1', email='', address='null'}
+ContactData{id=84, firstName='FirstN 0', lastName='LastN 0', email='', address='null'}
+ContactData{id=85, firstName='FirstN 1', lastName='LastN 1', email='', address='null'}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -3,12 +3,13 @@ package ru.stqa.pft.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.ManyToAny;
 import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
-
 import java.io.File;
-import java.util.Objects;
+import java.util.HashSet;
+import java.util.Set;
+
 
 @Entity
 @Table(name = "addressbook")
@@ -26,20 +27,16 @@ public class ContactData {
     @Column(name = "lastname")
     private  String lastName;
 
-
     @Column(name = "email")
     @Type(type="text")
     private  String email;
+
     @Transient
     private  String email1;
     @Transient
     private  String email2;
     @Transient
     private  String allEmails;
-
-    @Expose
-    @Transient
-    private  String group;
 
     @Column(name = "home")
     @Type(type = "text")
@@ -64,6 +61,10 @@ public class ContactData {
     @Column(name = "photo")
     @Type(type = "text")
     private String photo;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "address_in_groups", joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id") )
+    private Set<GroupData> groups = new HashSet<GroupData>();
 
 
     @Override
@@ -97,10 +98,7 @@ public class ContactData {
         return this;
     }
 
-    public ContactData withGroup(String group) {
-        this.group = group;
-        return this;
-    }
+
 
     public ContactData withMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
@@ -142,6 +140,10 @@ public class ContactData {
         return this;
     }
 
+    public Groups getGroups() {
+        return new Groups(groups);
+    }
+
     public File getPhoto() {
         return new File(photo);
     }
@@ -170,9 +172,7 @@ public class ContactData {
         return this.email;
     }
 
-    public String getGroup() {
-        return this.group;
-    }
+
 
     public String getHomePhone() {
         return this.homePhone;
@@ -200,4 +200,8 @@ public class ContactData {
 
     public String getAddress() {return address; }
 
+    public ContactData inGroup(GroupData group) {
+        groups.add(group);
+        return this;
+    }
 }

@@ -6,6 +6,8 @@ import com.thoughtworks.xstream.XStream;
 import org.testng.annotations.*;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.Groups;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
