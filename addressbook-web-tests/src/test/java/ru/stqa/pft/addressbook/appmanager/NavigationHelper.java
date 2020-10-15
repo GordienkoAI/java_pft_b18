@@ -27,4 +27,11 @@ public class NavigationHelper extends HelperBase{
         click(By.name("home"));
     }
 
+    public void gotoStartPage() {
+        if (isElementPresent(By.id("maintable"))){
+            return;
+        }
+        click(By.linkText("home"));
+    }
+
 }
