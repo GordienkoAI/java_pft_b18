@@ -62,6 +62,10 @@ public class ContactHelper  extends HelperBase {
         click(By.name("update"));
     }
 
+    public void removeFromGroup() {
+        click(By.name("remove"));
+    }
+
     public void delete() {
         click(By.xpath("//input[@value='Delete']"));
     }
@@ -110,6 +114,12 @@ public class ContactHelper  extends HelperBase {
     }
 
     private void selectGroup(GroupData group) {
+    }
+
+    public void deleteFromGroup(ContactData contact) {
+        selectById(contact.getId());
+        removeFromGroup();
+        returnHomePage();
     }
 
 

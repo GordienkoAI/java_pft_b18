@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.support.ui.Select;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 
 import java.io.File;
@@ -95,4 +97,8 @@ public class ApplicationManager {
     public DbHelper db(){ return dbHelper; }
 
 
+    public void selectGroup(GroupData group) {
+    //    GroupData group = dbHelper.groups().iterator().next();
+        new Select(wd.findElement(By.name("group"))).selectByVisibleText(group.getName());
+    }
 }
