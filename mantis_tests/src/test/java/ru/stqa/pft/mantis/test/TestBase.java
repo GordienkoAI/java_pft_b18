@@ -14,15 +14,15 @@ public class TestBase {
     public static final ApplicationManager app
             = new ApplicationManager(System.getProperty("browser", BrowserType.CHROME));
 
-    @BeforeSuite
+   @BeforeSuite
     public void setUp() throws Exception {
         app.init();
-        app.ftp().upload(new File("src/test/resources/config_inc.php"),"config_inc.php", "config_inc.php.back");
+    //    app.ftp().upload(new File("src/test/resources/config_inc.php"),"config_inc.php", "config_inc.php.back");
     }
 
     @AfterSuite(alwaysRun = true)
     public void tearDown() throws Exception {
         app.stop();
-        app.ftp().restore("config_inc.php.back","config_inc.php" );
+  //      app.ftp().restore("config_inc.php.back","config_inc.php" );
     }
 }

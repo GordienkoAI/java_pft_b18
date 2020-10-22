@@ -24,24 +24,26 @@ public class HttpSession {
         httpclient = HttpClients.custom().setRedirectStrategy(new LaxRedirectStrategy()).build();
     }
 
-    public boolean login(String username, String password) throws IOException {
-        HttpPost post = new HttpPost(app.getProperty("web.baseUrl") + "/login_page.php");
+      public boolean login(String username, String password) throws IOException {
+        HttpPost post = new HttpPost(app.getProperty("web.baseUrl") + "/login.php");
         List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
         params.add(new BasicNameValuePair("username", username));
+          post.setEntity(new UrlEncodedFormEntity(params));
         params.add(new BasicNameValuePair("password", password));
         params.add(new BasicNameValuePair("secure_session", "on"));
         params.add(new BasicNameValuePair("return", "index.php"));
         post.setEntity(new UrlEncodedFormEntity(params));
         CloseableHttpResponse response = httpclient.execute(post);
         String body = getTextFrom(response);
-        return body.contains(String.format("<span class=\"italic\">%s</span>", username));
+        return body.contains(String.format("<span class=\"label hidden-xs label-default arrowed\">%s</span>", username));
     }
 
-    private String getTextFrom(CloseableHttpResponse responce) throws IOException {
+
+    private String getTextFrom(CloseableHttpResponse response) throws IOException {
         try{
-            return EntityUtils.toString(responce.getEntity());
+            return EntityUtils.toString(response.getEntity());
         }finally{
-            responce.close();
+            response.close();
         }
     }
 
@@ -49,6 +51,6 @@ public class HttpSession {
         HttpGet get = new HttpGet(app.getProperty("web.baseUrl") + "/index.php");
         CloseableHttpResponse response = httpclient.execute(get);
         String body = getTextFrom(response);
-        return body.contains(String.format("<span class=\"italic\">%s</span>", username));
+        return body.contains(String.format("<span class=\"label hidden-xs label-default arrowed\">%s</span>", username));
     }
 }
