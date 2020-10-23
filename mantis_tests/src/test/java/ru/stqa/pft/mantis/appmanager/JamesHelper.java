@@ -1,7 +1,7 @@
 package ru.stqa.pft.mantis.appmanager;
 
 import org.apache.commons.net.telnet.TelnetClient;
-import ru.stqa.pft.mantis.appmanager.model.MailMessage;
+import ru.stqa.pft.mantis.model.MailMessage;
 
 import javax.mail.*;
 import java.io.IOException;
@@ -10,7 +10,6 @@ import java.io.PrintStream;
 import java.net.SocketException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class JamesHelper {
@@ -33,10 +32,10 @@ public class JamesHelper {
 
     public boolean doesUserExist(String name){
         initTelnetSession();
-        write("verify" + name);
+        write("verify " + name);
         String result = readUntil("exist");
         closeTelnetSession();
-        return true;
+        return result.trim().equals("User "+ name + " exist");
     }
 
     //очищение почтового ящика
@@ -51,7 +50,7 @@ public class JamesHelper {
     public void createUser(String name, String password) {
         initTelnetSession();
         write("adduser "+ name+ " "+ password);
-        String result = readUntil("User " + name + " added");
+        String result = readUntil("UserData " + name + " added");
         closeTelnetSession();
     }
 
@@ -71,12 +70,12 @@ public class JamesHelper {
             e.printStackTrace();
         }
 
-        readUntil(" login id:");
+/*        readUntil(" login id:");
         write("");
         readUntil("Password:");
         write("");
-
-        readUntil(" login id:");
+*/
+        readUntil("Login id:");
         write(login);
         readUntil("Password:");
         write(password);
@@ -120,7 +119,7 @@ public class JamesHelper {
     }
 
 
-    public List<MailMessage> waitForMail(String user, String email, long timeout) throws MessagingException {
+    public List<MailMessage> waitForMail(String username, String email, long timeout) throws MessagingException {
         long now  = System.currentTimeMillis();
         while(System.currentTimeMillis() < now + timeout){
             List<MailMessage> allMail =  getAllMail(username, password);
@@ -128,7 +127,7 @@ public class JamesHelper {
                 return allMail;
             }
             try{
-                Thread.sleep(1000);
+                Thread.sleep(10000);
             }catch (InterruptedException e){
                 e.printStackTrace();
             }

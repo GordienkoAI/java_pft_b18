@@ -9,13 +9,17 @@ import java.io.File;
 
 
 public class HelperBase {
-    protected WebDriver wd;
-    protected ApplicationManager app;
+    public WebDriver wd;
+    public ApplicationManager app;
 
 
     public HelperBase(ApplicationManager app) {
         this.app = app;
         this.wd = app.getDriver();
+    }
+
+    public HelperBase(WebDriver wd) {
+        this.wd = wd;
     }
 
     protected void click(By locator) {

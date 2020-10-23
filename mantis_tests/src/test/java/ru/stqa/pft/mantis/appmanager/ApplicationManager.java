@@ -16,12 +16,15 @@ import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
     private final Properties properties;
-    private WebDriver wd;
+    WebDriver wd;
     private  RegistrationHelper registrationHelper;
     private String browser;
     private FtpHelper ftp;
     private MailHelper mailHelper;
     private JamesHelper jamesHelper;
+    private NavigationHelper navigateHelper;
+    private DbHelper dbHelper;
+
 
     public ApplicationManager(String browser){
         this.browser = browser;
@@ -29,9 +32,11 @@ public class ApplicationManager {
     }
 
 
+
     public void init() throws IOException{
         String target = System.getProperty("target", "local");
         properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
+        dbHelper = new DbHelper();
  }
 
     public void stop() {
@@ -90,5 +95,16 @@ public class ApplicationManager {
             jamesHelper = new JamesHelper(this);
         }
         return jamesHelper;
+    }
+
+    public NavigationHelper navigateHelper(){
+        if(navigateHelper == null){
+            navigateHelper = new NavigationHelper(this);
+        }
+        return navigateHelper;
+    }
+
+    public DbHelper db(){
+        return dbHelper;
     }
 }

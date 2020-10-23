@@ -4,7 +4,7 @@ package ru.stqa.pft.mantis.appmanager;
 import javax.mail.MessagingException;
 import org.subethamail.wiser.Wiser;
 import org.subethamail.wiser.WiserMessage;
-import ru.stqa.pft.mantis.appmanager.model.MailMessage;
+import ru.stqa.pft.mantis.model.MailMessage;
 import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.util.List;
