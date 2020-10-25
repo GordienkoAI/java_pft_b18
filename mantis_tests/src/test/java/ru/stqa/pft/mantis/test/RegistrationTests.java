@@ -1,24 +1,38 @@
 package ru.stqa.pft.mantis.test;
 
 
+import biz.futureware.mantis.rpc.soap.client.IssueData;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.lanwen.verbalregex.VerbalExpression;
+import ru.stqa.pft.mantis.model.Issue;
 import ru.stqa.pft.mantis.model.MailMessage;
+import ru.stqa.pft.mantis.model.Project;
 
 import javax.mail.MessagingException;
+import javax.xml.rpc.ServiceException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.rmi.RemoteException;
 import java.util.List;
+import java.util.Set;
 
 public class RegistrationTests extends TestBase {
 
-    //@BeforeMethod
-    public void startMailServer(){
-        app.mail().start();
+    private static int issueId;
+
+    //   @BeforeMethod
+    public void startRegistrationTests() throws RemoteException, ServiceException, MalformedURLException {
+          app.mail().start();
     }
 
+
     @Test
-    public void testRegistration() throws IOException, MessagingException {
+    public void testRegistration() throws IOException, MessagingException, ServiceException {
+
+
         long now = System.currentTimeMillis();
         String email = String.format("user%slocalhost.localdomain", now);
         String user = String.format("user%s",now);
@@ -39,8 +53,9 @@ public class RegistrationTests extends TestBase {
     }
 
 
- //  @AfterMethod(alwaysRun = true)
-    public void stopMailServer(){
+//     @AfterMethod(alwaysRun = true)
+    public void stopRegistrationTests() throws RemoteException, ServiceException, MalformedURLException {
         app.mail().stop();
+
     }
 }
