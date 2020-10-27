@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.rest.RestAssuredTests" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-10-27T08:07:14" hostname="msk00912-note" time="35.178">
+  <properties/>
+  <testcase name="testCreateIssue" classname="ru.stqa.pft.rest.RestAssuredTests" time="35.178">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

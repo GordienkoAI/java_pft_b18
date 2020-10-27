@@ -17,11 +17,10 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
 import java.util.List;
-import java.util.Set;
+
 
 public class RegistrationTests extends TestBase {
 
-    private static int issueId;
 
     //   @BeforeMethod
     public void startRegistrationTests() throws RemoteException, ServiceException, MalformedURLException {
