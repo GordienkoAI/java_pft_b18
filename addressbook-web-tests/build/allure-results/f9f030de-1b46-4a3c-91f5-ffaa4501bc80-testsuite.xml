@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1603991171977" stop="1603991176228" version="1.5.4" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Gradle suite : Gradle test</name>
+    <title>Gradle suite : Gradle test</title>
+    <test-cases>
+        <test-case start="1603991171990" stop="1603991171995" status="pending">
+            <name>testBadGroupCreation</name>
+            <failure>
+                <message>Test not implemented yet</message>
+                <stack-trace>There are no stack trace</stack-trace>
+            </failure>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="msk00912-note"/>
+                <label name="thread" value="23008@msk00912-note.Test worker(12)"/>
+            </labels>
+        </test-case>
+        <test-case start="1603991172073" stop="1603991174193" status="passed">
+            <name>testGroupCreation[GroupData{name='test 0', id='2147483647'}]</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Gradle suite"/>
+                <label name="testGroup" value="Gradle test"/>
+                <label name="testClass" value="ru.stqa.pft.addressbook.tests.GroupCreationTest"/>
+                <label name="testMethod" value="testGroupCreation"/>
+                <label name="host" value="msk00912-note"/>
+                <label name="thread" value="23008@msk00912-note.Test worker(12)"/>
+            </labels>
+        </test-case>
+        <test-case start="1603991174197" stop="1603991176226" status="passed">
+            <name>testGroupCreation[GroupData{name='test 1', id='2147483647'}]</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Gradle suite"/>
+                <label name="testGroup" value="Gradle test"/>
+                <label name="testClass" value="ru.stqa.pft.addressbook.tests.GroupCreationTest"/>
+                <label name="testMethod" value="testGroupCreation"/>
+                <label name="host" value="msk00912-note"/>
+                <label name="thread" value="23008@msk00912-note.Test worker(12)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

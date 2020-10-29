@@ -26,11 +26,11 @@ public class TestBase {
             public static final ApplicationManager app
                     = new ApplicationManager(System.getProperty("browser", BrowserType.CHROME));
 
-            // ITestContext context передать в параметр,для Allure
+
             @BeforeSuite
-            public void setUp()  throws Exception {
+            public void setUp(ITestContext context)  throws Exception {
                 app.init();
-  //              context.setAttribute("app", app);
+               context.setAttribute("app", app);
             }
 
             @AfterSuite(alwaysRun = true)

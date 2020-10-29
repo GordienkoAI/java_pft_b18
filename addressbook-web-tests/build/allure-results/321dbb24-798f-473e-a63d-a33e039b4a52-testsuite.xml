@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1603969959166" stop="1603969960636" version="1.5.4" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Suite1 : Groups</name>
+    <title>Suite1 : Groups</title>
+    <test-cases>
+        <test-case start="1603969960548" stop="0" status="passed">
+            <name>testGroupModification</name>
+            <labels>
+                <label name="testSuite" value="Suite1"/>
+                <label name="testGroup" value="Groups"/>
+                <label name="testClass" value="ru.stqa.pft.addressbook.tests.GroupModificationTest"/>
+                <label name="testMethod" value="testGroupModification"/>
+                <label name="host" value="msk00912-note"/>
+                <label name="thread" value="5520@msk00912-note.Test worker(15)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>
