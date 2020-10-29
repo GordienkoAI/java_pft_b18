@@ -1,0 +1,70 @@
+{
+  "uid" : "ed7aa5f6db46126c",
+  "name" : "testGroupModification",
+  "fullName" : "ru.stqa.pft.addressbook.tests.GroupModificationTest.testGroupModification",
+  "historyId" : "a3e4c2e9eda6b8a549903bc022e9a28a",
+  "time" : {
+    "start" : 1603900088039,
+    "stop" : 1603900090216,
+    "duration" : 2177
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "host",
+    "value" : "msk00912-note"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.stqa.pft.addressbook.tests.GroupModificationTest"
+  }, {
+    "name" : "testGroup",
+    "value" : "Groups"
+  }, {
+    "name" : "testMethod",
+    "value" : "testGroupModification"
+  }, {
+    "name" : "testSuite",
+    "value" : "Suite1"
+  }, {
+    "name" : "thread",
+    "value" : "3952@msk00912-note.Test worker(12)"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Suite1"
+  }, {
+    "name" : "suite",
+    "value" : "Groups"
+  }, {
+    "name" : "subSuite",
+    "value" : "ru.stqa.pft.addressbook.tests.GroupModificationTest"
+  }, {
+    "name" : "package",
+    "value" : "ru.stqa.pft.addressbook.tests.GroupModificationTest"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ed7aa5f6db46126c.json",
+  "parameterValues" : [ ]
+}

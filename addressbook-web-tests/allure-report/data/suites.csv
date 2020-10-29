@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Oct 28 18:48:08 MSK 2020","Wed Oct 28 18:48:10 MSK 2020","2177","Suite1","Groups","ru.stqa.pft.addressbook.tests.GroupModificationTest","ru.stqa.pft.addressbook.tests.GroupModificationTest","testGroupModification","testGroupModification",""

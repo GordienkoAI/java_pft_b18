@@ -1,0 +1,11 @@
+[ {
+  "uid" : "ed7aa5f6db46126c",
+  "name" : "testGroupModification",
+  "time" : {
+    "start" : 1603900088039,
+    "stop" : 1603900090216,
+    "duration" : 2177
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

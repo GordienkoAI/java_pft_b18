@@ -111,4 +111,8 @@ public class ApplicationManager {
     //    GroupData group = dbHelper.groups().iterator().next();
         new Select(wd.findElement(By.name("group"))).selectByVisibleText(group.getName());
     }
+
+    public byte[] takeScreenshot(){
+       return ((TakesScreenshot) wd).getScreenshotAs(OutputType.BYTES);
+    }
 }

@@ -1,0 +1,26 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "msk00912-note",
+    "children" : [ {
+      "name" : "3952@msk00912-note.Test worker(12)",
+      "children" : [ {
+        "name" : "testGroupModification",
+        "uid" : "ed7aa5f6db46126c",
+        "parentUid" : "5ab994479b3fe73f526347ab098efd37",
+        "status" : "passed",
+        "time" : {
+          "start" : 1603900088039,
+          "stop" : 1603900090216,
+          "duration" : 2177
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5ab994479b3fe73f526347ab098efd37"
+    } ],
+    "uid" : "6061c20ad7710f3695054b1b04d4fe59"
+  } ]
+}
